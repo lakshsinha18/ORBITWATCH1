@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrbitWatch — Satellite Collision Alert System</title>
+    <meta name="description" content="OrbitWatch is a futuristic space traffic monitoring dashboard that predicts satellite collisions before they happen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header id="top-bar">
+        <div class="logo">
+            <span class="logo-icon">◉</span>
+            <h1>ORBITWATCH</h1>
+            <span class="tagline">Satellite Collision Alert System</span>
+        </div>
+        <div class="status-bar">
+            <div class="status-item active">
+                <span class="status-dot"></span>
+                <span>Systems Online</span>
+            </div>
+            <div class="status-item">
+                <span class="clock" id="live-clock">00:00:00 UTC</span>
+            </div>
+            <div class="status-item">
+                <span class="sat-count" id="sat-count">8 Satellites Tracked</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main id="dashboard">
+        <!-- LEFT: Collision Alert Panel -->
+        <aside id="alert-panel" class="panel">
+            <div class="panel-header">
+                <span class="panel-icon">⚠</span>
+                <h2>Collision Alerts</h2>
+                <span class="alert-badge" id="alert-count">0</span>
+            </div>
+            <div id="alert-list" class="panel-body">
+                <!-- Alerts injected by JS -->
+            </div>
+            <!-- Prediction Engine Section -->
+            <div id="prediction-engine" class="sub-panel">
+                <div class="panel-header small">
+                    <span class="panel-icon">📡</span>
+                    <h3>Prediction Engine</h3>
+                </div>
+                <div class="engine-status">
+                    <div class="engine-row">
+                        <span class="engine-dot active"></span>
+                        <span>Trajectory Prediction Active</span>
+                    </div>
+                    <div class="engine-row">
+                        <span class="engine-dot active"></span>
+                        <span>Proximity Analysis Running</span>
+                    </div>
+                    <div class="engine-row">
+                        <span class="engine-dot active"></span>
+                        <span>Orbit Decay Monitoring</span>
+                    </div>
+                </div>
+                <div class="engine-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="engine-progress-fill"></div>
+                    </div>
+                    <span class="progress-label">Analysis Cycle <span id="cycle-count">0</span></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CENTER: 3D Earth Visualization -->
+        <section id="earth-section">
+            <div id="three-container">
+                <!-- Three.js canvas rendered here -->
+            </div>
+            <div id="earth-overlay">
+                <div class="orbit-label">LEO — Low Earth Orbit</div>
+            </div>
+            <!-- Insight Box -->
+            <div id="insight-box" class="glass-box">
+                <div class="insight-header">
+                    <span class="insight-icon">🧠</span>
+                    <h3>Risk Insight</h3>
+                </div>
+                <p id="insight-text">Initializing risk analysis engine...</p>
+            </div>
+        </section>
+
+        <!-- RIGHT: Satellite Data Panel -->
+        <aside id="data-panel" class="panel">
+            <div class="panel-header">
+                <span class="panel-icon">📊</span>
+                <h2>Satellite Data</h2>
+            </div>
+            <div id="satellite-list" class="panel-body">
+                <!-- Satellite cards injected by JS -->
+            </div>
+        </aside>
+    </main>
+
+    <!-- Bottom: Data Flow Diagram -->
+    <footer id="data-flow-section">
+        <div class="flow-title">⚙ System Architecture — Data Flow</div>
+        <div id="data-flow">
+            <div class="flow-node">
+                <div class="flow-node-inner">
+                    <span class="flow-icon">🛰</span>
+                    <span>Satellite Data</span>
+                </div>
+            </div>
+            <div class="flow-arrow">
+                <div class="arrow-line"></div>
+                <div class="arrow-head">▶</div>
+            </div>
+            <div class="flow-node">
+                <div class="flow-node-inner">
+                    <span class="flow-icon">📡</span>
+                    <span>Prediction Engine</span>
+                </div>
+            </div>
+            <div class="flow-arrow">
+                <div class="arrow-line"></div>
+                <div class="arrow-head">▶</div>
+            </div>
+            <div class="flow-node">
+                <div class="flow-node-inner">
+                    <span class="flow-icon">🔍</span>
+                    <span>Risk Detection</span>
+                </div>
+            </div>
+            <div class="flow-arrow">
+                <div class="arrow-line"></div>
+                <div class="arrow-head">▶</div>
+            </div>
+            <div class="flow-node highlight">
+                <div class="flow-node-inner">
+                    <span class="flow-icon">⚠</span>
+                    <span>Alerts + Viz</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

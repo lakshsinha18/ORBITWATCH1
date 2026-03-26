@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orbit-dark-bg: #030712;
+  --color-orbit-panel-bg: rgba(17, 24, 39, 0.75);
+  --color-orbit-neon-blue: #3b82f6;
+  --color-orbit-neon-purple: #8b5cf6;
+  --color-orbit-neon-red: #ef4444;
+  --color-orbit-neon-green: #10b981;
+  --color-orbit-neon-yellow: #f59e0b;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-orbit-dark-bg);
+    color: white;
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: var(--color-orbit-panel-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .neon-text-blue {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.7), 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .neon-text-red {
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.5);
+  }
+
+  .neon-border-blue {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), inset 0 0 10px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.8);
+  }
+
+  .neon-border-red {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6), inset 0 0 15px rgba(239, 68, 68, 0.3);
+    border-color: rgba(239, 68, 68, 0.9);
+  }
+  
+  .glow-dot-green {
+    box-shadow: 0 0 8px var(--color-orbit-neon-green);
+    background-color: var(--color-orbit-neon-green);
+  }
+  
+  .glow-dot-yellow {
+    box-shadow: 0 0 8px var(--color-orbit-neon-yellow);
+    background-color: var(--color-orbit-neon-yellow);
+  }
+
+  .glow-dot-red {
+    box-shadow: 0 0 10px var(--color-orbit-neon-red);
+    background-color: var(--color-orbit-neon-red);
+  }
+}
